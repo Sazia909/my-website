@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Cake</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#ffb6c1,#ffd1dc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    width:320px;
+    height:450px;
+    background:#ffccd5;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    padding-bottom:40px;
+    position:relative;
+}
+
+.cake-area{
+    width:160px;
+    height:200px;
+    position:relative;
+}
+
+/* Cake layers */
+.layer{
+    width:160px;
+    height:40px;
+    border-radius:12px;
+    position:absolute;
+    left:0;
+    top:-60px;
+    opacity:0;
+}
+
+.layer1{background:#6b3e26;}
+.layer2{background:#8d5524;}
+.layer3{background:#b5651d;}
+.layer4{background:#f3e5ab;}
+.layer5{background:#d2691e;}
+
+
+/* Icing */
+.icing{
+    width:160px;
+    height:20px;
+    background:white;
+    border-radius:12px;
+    position:absolute;
+    top:-20px;
+    left:0;
+}
+
+/* Candle */
+.candle{
+    width:10px;
+    height:40px;
+    background:white;
+    position:absolute;
+    left:50%;
+    top:-40px;
+    transform:translateX(-50%);
+}
+
+.flame{
+    width:14px;
+    height:18px;
+    background:orange;
+    border-radius:50%;
+    position:absolute;
+    top:-18px;
+    left:-2px;
+    animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:scale(1);}
+    to{transform:scale(1.2);}
+}
+
+/* Text */
+#text{
+    margin-top:30px;
+    font-size:2.5em;
+    font-weight:700;
+    color:#c2185b;
+    height:50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="cake-area">
+        <div class="layer layer5"></div>
+        <div class="layer layer4"></div>
+        <div class="layer layer3"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer1"></div>
+
+        <div class="icing"></div>
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <div id="text"></div>
+</div>
+
+<script>
+let layers = document.querySelectorAll(".layer");
+let y = 180;
+
+layers.forEach((layer, index) => {
+    setTimeout(() => {
+        layer.style.opacity = 1;
+        layer.style.transition = "0.8s ease-out";
+        layer.style.top = y + "px";
+        y -= 40;
+    }, index * 700);
+});
+
+/* Type Happy Birthday after cake stacks */
+let message = "Happy Birthday 🎉";
+let i = 0;
+let text = document.getElementById("text");
+
+setTimeout(() => {
+    function type(){
+        if(i < message.length){
+            text.innerHTML += message.charAt(i);
+            i++;
+            setTimeout(type,150);
+        }
+    }
+    type();
+}, layers.length * 700 + 500);
+</script>
+
+</body>
+</html>
