@@ -1,0 +1,197 @@
+<html>
+<head>
+<title>Sazia Resume</title>
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #cce7ff, #e6f2ff);
+        margin: 0;
+        padding: 0;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    h1, h3, h5 {
+        text-align: center;
+        color: #004080;
+        animation: slideInDown 1s ease-in-out;
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+        display: block;
+        margin: 20px auto;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid #004080;
+        object-fit: cover;
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .profile-pic:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Table */
+    table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        width: 80%;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    table, th, td {
+        border: 2px solid #004080;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: background-color 0.3s ease;
+    }
+
+    tr:hover td {
+        background-color: #b3d9ff;
+    }
+
+    /* Lists */
+    ol, ul {
+        width: fit-content;
+        margin: auto;
+        background: rgba(255,255,255,0.7);
+        padding: 15px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    li:hover {
+        color: #004080;
+        transform: scale(1.05);
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Links */
+    a {
+        color: #004080;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+        color: #ff6600;
+        transform: scale(1.1);
+    }
+
+    /* Contact Form */
+    form {
+        text-align: center;
+        margin-top: 20px;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    input, textarea {
+        margin: 8px;
+        padding: 10px;
+        width: 250px;
+        border-radius: 5px;
+        border: 1px solid #004080;
+        outline: none;
+        transition: box-shadow 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+        box-shadow: 0 0 10px #66b3ff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideInDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+</head>
+<body>
+    <h1>My Resume</h1>
+    <h3>Profile Summary :-</h3>
+    <img src="pic.jpg" 
+         alt="Profile Picture" class="profile-pic">
+    <p style="text-align:center;">I am Sazia Anjum. I am from Nandyal, studying at RGMCET, CSE Branch.</p>
+
+    <h3>Education:-</h3>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Qualification</th>
+            <th>Name of the Institution</th>
+            <th>CGPA</th>
+            <th>YOP</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>B.Tech</td>
+            <td>RGM</td>
+            <td>9.5</td>
+            <td>2028</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Intermediate</td>
+            <td>Narayana Jr College</td>
+            <td>9.1</td>
+            <td>2024</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>School</td>
+            <td>Good Shepherd E.M School</td>
+            <td>9.5</td>
+            <td>2022</td>
+        </tr>
+    </table>
+
+    <h3>Skills:</h3>
+    <h5>Technical</h5>
+    <ol type="i">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Python</li>
+        <li>React</li>
+    </ol>
+    <h5>Non Technical</h5>
+    <ul>
+        <li>Good Communication Skills</li>
+        <li>Leadership Qualities</li>
+    </ul>
+
+    <h3>My Portfolios:</h3>
+    <p style="text-align:center;">
+        <a href="">LeetCode</a> | 
+        <a href="">LinkedIn</a>
+    </p>
+
+    <h3>Contact me:</h3>
+    <form>
+        <input type="text" placeholder="Enter your name"> <br>
+        <input type="number" placeholder="Enter your number"> <br>
+        <input type="email" placeholder="Enter your email"> <br>
+        <textarea placeholder="Enter Description" rows="5" cols="30"></textarea> <br>
+        <input type="submit" value="Submit" style="background:#004080; color:white; cursor:pointer;">
+    </form>
+</body>
+</html>
